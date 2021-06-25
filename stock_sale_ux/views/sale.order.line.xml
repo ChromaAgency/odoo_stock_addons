@@ -8,6 +8,7 @@
         <field name="arch" type="xml">
             <xpath expr="//field[@name='order_line']/form//field[@name='qty_to_invoice']" position="after">
                 <field name="qty_available" />
+                <field name="virtual_available" />
             </xpath> 
         </field>
     </record>
