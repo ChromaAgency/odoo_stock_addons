@@ -63,7 +63,8 @@ class StockPickingVoucher(models.Model):
                 failed = True
             elif len(number) > 8 or not number.isdigit():
                 failed = True
-            document_number = '{:>04s}-{:>08s}'.format(pos, number)
+            document_number = '{:0>4}-{:0>8}'.format(pos, number)
+            return document_number
         if failed:
             raise UserError(msg % (document_number, 'Voucher', _(
                 'The document number must be entered with a dash (-) and a maximum of 4 characters for the first part'
