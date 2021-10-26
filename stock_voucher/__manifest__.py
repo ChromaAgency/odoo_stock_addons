@@ -23,14 +23,13 @@
     'category': 'Warehouse Management',
     'sequence': 14,
     'summary': '',
-    'author': 'ADHOC SA',
-    'website': 'www.adhoc.com.ar',
+    'author': 'Making Argentina',
+    'website': 'www.making.com.ar',
     'license': 'AGPL-3',
     'images': [
     ],
     'depends': [
         'stock',
-        'web_ir_actions_act_multi',
     ],
     'data': [
         'security/stock_voucher_security.xml',
