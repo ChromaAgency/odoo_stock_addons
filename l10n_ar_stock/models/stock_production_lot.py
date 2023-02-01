@@ -6,7 +6,7 @@ from odoo import models, fields
 
 
 class StockProductionLot(models.Model):
-    _inherit = 'stock.production.lot'
+    _inherit = 'stock.lot'
 
     dispatch_number = fields.Char(
     )
