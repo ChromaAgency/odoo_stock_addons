@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <record id="view_production_lot_view_tree_inherit_stock_expire_ux" model="ir.ui.view">
-        <field name="name">stock.production.lot.view.list.inherit</field>
-        <field name="model">stock.production.lot</field>
+        <field name="name">stock.lot.view.list.inherit</field>
+        <field name="model">stock.lot</field>
         <field name="inherit_id" ref="product_expiry.view_production_lot_view_tree"/>
         <field name="arch" type="xml">
             <xpath expr="//tree" position="attributes">
