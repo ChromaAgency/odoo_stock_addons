@@ -15,6 +15,15 @@ class StockPicking(models.Model):
 
     _inherit = "stock.picking"
 
+    account_move_ids = fields.Many2many('account.move', 'account_move_voucher_relation', 'stock_picking_id', 'account_move_id', string="Facturas de este remito",
+                                 domain="[('type','=','out_invoice'),'|',('partner_id','child_of',partner_id),('partner_id','=',partner_id)]")
+
+    def get_related_invoices(self):
+        """ Get and prepare data to show a table of invoiced lot on the invoice's report. """
+        self.ensure_one()
+
+        return self.account_move_ids.mapped('name')
+    
     dispatch_number = fields.Char(
         states={'done': [('readonly', True)], 'cancel': [('readonly', True)]},
         help='Si define un número de despacho, al validar la transferencia, '
