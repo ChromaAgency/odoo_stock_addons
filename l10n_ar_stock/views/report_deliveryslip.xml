@@ -106,10 +106,6 @@
                 </span>
                 <span t-esc="partner" t-options='{"widget": "contact", "fields": ["address", "phone", "mobile"], "no_marker": False, "no_tag_br": True}'/>
 
-                <!-- (16) Responsabilidad AFIP -->
-                <strong>VAT Cond: </strong>
-                <span t-field="partner.l10n_ar_afip_responsibility_type_id"/>
-
                 <!-- (17) CUIT -->
                 <t t-if="partner.vat and partner.l10n_latam_identification_type_id.name and partner.l10n_latam_identification_type_id.name != 'Sigd'">
                     <br/>
@@ -122,8 +118,8 @@
             </div>
             <div class="col-6">
 
-                <t>
-                    <strong>Order:</strong>
+                <t t-if="o.origin">
+                    <strong>Documento de origen:</strong>
                     <span t-field="o.origin"/>
                 </t>
                 <t t-if="o._fields.get('purchase_order_number') and o.purchase_order_number">
