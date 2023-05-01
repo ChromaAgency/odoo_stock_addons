@@ -1,22 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <!-- we would do something like this if we want it multilocalization compatible as in l10n_latam_invoice_document -->
-    <!-- <template id="report_saleorder" inherit_id="sale.report_saleorder">
-        <t t-call="sale.report_saleorder_document" position="attributes">
-            <attribute name="t-call">#{ o.get_custom_report('sale.report_saleorder_document') }</attribute>
-        </t>
-    </template>
-
-    <template id="report_saleorder_pro_forma" inherit_id="sale.report_saleorder_pro_forma">
-        <t t-call="sale.report_saleorder_document" position="attributes">
-            <attribute name="t-call">#{ o.get_custom_report('sale.report_saleorder_document') }</attribute>
-        </t>
-    </template> -->
-
-    <!-- we force priority greater than 20 so that it dont break inheritance with delivery view -->
     <template id="report_delivery_document" priority="20" inherit_id="stock.report_delivery_document">
         <!-- custom header and footer -->
+        <xpath expr="//div[@t-if='o.origin']" position="after">
+            <br/>
+            <strong>Facturas relacionadas: </strong><t t-out="', '.join(o.account_move_ids.mapped('name'))"/>
+
+        </xpath>
         <t t-set="o" position="after">
             <t t-set="custom_header" t-value="'l10n_ar.custom_header'"/>
             <t t-set="report_date" t-value="o.date_done"/>
@@ -72,9 +63,6 @@
         </t>
     </t>
 
-    <!-- <table name="stock_move_line_table" position="attributes">
-        <attribute name="class" separator=" " add="" ></attribute>
-    </table> -->
     <table name="stock_move_line_table" position="after">
       Observaciones: <span t-out="o.note" />
     </table>
