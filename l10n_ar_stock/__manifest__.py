@@ -8,7 +8,7 @@
     'license': 'AGPL-3',
     'depends': [
         'stock_voucher',  # por la clase receiptbooks y demas
-        'l10n_ar',  
+        'l10n_ar', 'delivery' 
     ],
     'data': [
         'security/l10n_ar_stock_security.xml',
