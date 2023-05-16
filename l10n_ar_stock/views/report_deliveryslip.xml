@@ -108,9 +108,9 @@
             </div>
             <div class="col-6">
 
-                <t>
-                    <strong>Order:</strong>
-                    <span t-field="o.origin" />
+                <t t-if="o.origin">
+                    <strong>Documento de origen:</strong>
+                    <span t-field="o.origin"/>
                 </t>
                 <br />
                 <strong>Facturas relacionadas: </strong>
