@@ -26,7 +26,7 @@
         <field name="groups_id" eval="[(5, 0, 0)]"/>
         <field name="arch" type="xml">
             <field name="partner_id" position="after">
-                <field name="account_move_ids" />
+                <field name="account_move_ids" widget = "many2many_tags"/>
                 <field name="dispatch_number" attrs="{'invisible': [('picking_type_code', '!=','incoming')]}"/>
             </field>
         </field>
