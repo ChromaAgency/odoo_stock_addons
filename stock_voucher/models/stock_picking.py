@@ -130,8 +130,8 @@ class StockPicking(models.Model):
         """
         # we send picking_id on context so it can be used on wizards because
         # active_id could not be the picking
-        self = self.with_context(picking_id=self.id)
-        self.do_stock_voucher_transfer_check()
+        for rec in self:
+            rec.do_stock_voucher_transfer_check()
 
         res = super().button_validate()
         # res none when no wizard opended
