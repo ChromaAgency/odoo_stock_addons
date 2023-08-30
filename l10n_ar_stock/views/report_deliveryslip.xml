@@ -54,6 +54,9 @@
 
         </t>
     </t>
+    <xpath expr="//table[@name='stock_move_table']" position="before">
+        <br/>
+    </xpath>
 
     <table name="stock_move_line_table" position="after">
   
