@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="custom_header" priority="20" inherit_id="l10n_ar.custom_header" >
+        <span t-field="o.company_id.partner_id.name" position="replace">
+            <t t-set="partner_report" t-value="o.book_id.report_partner_id or o.picking_type_id.warehouse_id.partner_id or o.sale_id.accounting_company_id.partner_id or o.company_id.partner_id" />
+            <span t-field="partner_report.name" />
+        </span>
+    </template>
+
+
+</odoo>
+
+    
