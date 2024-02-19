@@ -1,12 +1,12 @@
 
 {
     'name': 'Stock Sale UX',
-    'version': "13.0.1.2.0",
+    'version': "17.0.1.2.0",
     'category': 'Warehouse Management',
     'sequence': 14,
     'summary': '',
-    'author': 'Making Argentina',
-    'website': 'www.making.com.ar',
+    'author': 'Chroma Agency',
+    'website': 'https://portal.chroma.agency/',
     'license': 'AGPL-3',
     'images': [
     ],

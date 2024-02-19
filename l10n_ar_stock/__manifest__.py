@@ -1,10 +1,10 @@
 {
     'name': ' stock para Argentina',
-    'version': '14.0.1.15.0',
+    'version': '17.0.1.15.0',
     'category': 'Localization/Argentina',
     'sequence': 14,
-    'author': 'Making SA',
-    'website': 'www.making.com.ar',
+    'author': 'Chroma Agency',
+    'website': 'https://portal.chroma.agency/',
     'license': 'AGPL-3',
     'depends': [
         'stock_voucher',  # por la clase receiptbooks y demas

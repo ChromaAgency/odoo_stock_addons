@@ -21,6 +21,16 @@ var/
 *.egg-info/
 .installed.cfg
 *.egg
+.env
+.dockerignore
+.env.sample
+.gitmodules
+.gitmodules_bup
+docker-compose.yml
+docker-compose-test.yml
+docker-odoo-config/*
+odoo-config/*
+README.md
 
 # Installer logs
 pip-log.txt
