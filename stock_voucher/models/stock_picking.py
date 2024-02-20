@@ -143,7 +143,7 @@ class StockPicking(models.Model):
     @api.depends(
         'automatic_declare_value',
         'move_ids.state',
-        'move_ids.quantity_done',
+        'move_ids.quantity',
         )
     def _compute_declared_value(self):
         for rec in self.filtered('automatic_declare_value'):
