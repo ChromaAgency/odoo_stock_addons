@@ -5,7 +5,7 @@
 from odoo import models, api
 
 
-class AccountChartTemplate(models.Model):
+class AccountChartTemplate(models.AbstractModel):
     _inherit = 'account.chart.template'
 
     def _load_template(

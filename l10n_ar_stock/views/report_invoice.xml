@@ -6,17 +6,17 @@
         <field name="model">account.move</field> -->
         <field name="inherit_id" ref="account.report_invoice_document"/>
         <field name="arch" type="xml">
-            <table name="invoice_snln_table" position="attributes">
+            <table name="invoice_line_table" position="attributes">
                 <attribute name="style">width: 75%;</attribute>
             </table>
-            <xpath expr="//table[@name='invoice_snln_table']/thead/tr" position="inside">
+            <xpath expr="//table[@name='invoice_line_table']/thead/tr" position="inside">
                 <th class="text-right">
                     <span>Dispatch Number</span>
                 </th>
             </xpath>
-            <xpath expr="//table[@name='invoice_snln_table']/tbody/t/tr" position="inside">
+            <xpath expr="//table[@name='invoice_line_table']/tbody/t[4]/tr" position="inside">
                 <td class="text-right">
-                    <t t-esc="snln_line['dispatch_number']"/>
+                    <t t-esc="line['dispatch_number']"/>
                 </td>
             </xpath>
         </field>
