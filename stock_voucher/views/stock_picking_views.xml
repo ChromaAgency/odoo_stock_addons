@@ -34,10 +34,9 @@
             </form>
 
             <field name="partner_id" position="after">
-                <!-- no lo hacemos requerido por vista -->
                 <field name="book_id" invisible="picking_type_code == 'incoming'" readonly="voucher_ids != []" domain="[('company_id', '=', company_id)]"/>
                 <field name="next_number" invisible="book_id == False or voucher_ids != []"/>
-                <field name="voucher_ids" readonly="picking_type_code != 'incoming'" widget="many2many_tags" context="{'default_picking_id': id}" domain="[('id', '=', False)]"  options="{'create':True, 'create_edit':True}"/>
+                <field name="voucher_ids" readonly="picking_type_code != 'incoming'" widget="many2many_tags" context="{'default_picking_id': id}" domain="[('id', '=', False)]" />
             </field>
 
             <field name="origin" position="after">
