@@ -1,6 +1,6 @@
 {
     'name': ' stock para Argentina',
-    'version': '17.17.0.0.1',
+    'version': '17.0.1.0.1',
     'category': 'Localization/Argentina',
     'sequence': 14,
     'author': 'Chroma',
