@@ -11,7 +11,7 @@
             </table>
             <xpath expr="//table[@name='invoice_snln_table']/thead/tr" position="inside">
                 <th class="text-right">
-                    <span>Dispatch Number</span>
+                    <span>Número de despacho</span>
                 </th>
             </xpath>
             <xpath expr="//table[@name='invoice_snln_table']/tbody/t/tr" position="inside">
