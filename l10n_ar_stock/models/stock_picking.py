@@ -473,8 +473,8 @@ class StockPicking(models.Model):
 
         return True
 
-    def action_done(self):
-        res = super().action_done()
+    def _action_done(self):
+        res = super()._action_done()
         for rec in self.filtered(
                 lambda x: x.picking_type_code == 'incoming' and
                 x.dispatch_number):
