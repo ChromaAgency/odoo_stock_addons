@@ -1,5 +1,5 @@
 {
-    'name': ' stock para Argentina',
+    'name': 'Stock Accounting Separated Company',
     'version': '17.0.1.0.1',
     'category': 'Localization/Argentina',
     'sequence': 14,
