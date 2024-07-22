@@ -7,15 +7,15 @@
         <field name="inherit_id" ref="account.report_invoice_document"/>
         <field name="arch" type="xml">
             <table name="invoice_line_table" position="attributes">
-                <attribute name="style">width: 75%;</attribute>
+                <attribute name="class" add="w-100" separator=" "></attribute>
             </table>
             <xpath expr="//table[@name='invoice_line_table']/thead/tr" position="inside">
-                <th class="text-right">
+                <th class="text-right" t-if="any(o.invoice_line_ids.sale_line_ids.move_ids.move_line_ids.lot_id.mapped('dispatch_number'))">
                     <span>Dispatch Number</span>
                 </th>
             </xpath>
             <xpath expr="//table[@name='invoice_line_table']/tbody/t[4]/tr" position="inside">
-                <td class="text-right">
+                <td class="text-right" t-if="any(o.invoice_line_ids.sale_line_ids.move_ids.move_line_ids.lot_id.mapped('dispatch_number'))">
                     <t t-set="dispatch_number" t-value="line.sale_line_ids.move_ids.move_line_ids.lot_id.dispatch_number"/>
                     <t t-if="dispatch_number">
                         <t t-esc="dispatch_number"/>                        
