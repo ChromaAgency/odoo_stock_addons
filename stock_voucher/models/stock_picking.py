@@ -139,7 +139,17 @@ class StockPicking(models.Model):
         if res is None and len(self) == 1 and self.book_required:
             return self.do_print_voucher()
         return res
+    
+    def get_estimated_number_of_pages(self):
+        self.ensure_one()
+        lines_per_voucher = self.lines_per_voucher
+        if lines_per_voucher == 0:
+            return 1
 
+        operations = len(self.move_line_ids)
+        estimated_number_of_pages = int(-(-float(operations) // float(lines_per_voucher)))
+        return estimated_number_of_pages
+    
     @api.depends(
         'automatic_declare_value',
         'move_ids.state',
@@ -232,3 +242,8 @@ class StockPicking(models.Model):
                     rec.sale_id.date_order or fields.Date.today())
             else:
                 rec.declared_value = declared_value
+
+    def action_assign_multi_picking_voucher(self):
+        self.ensure_one()
+        wizard = self.env.ref('stock_voucher.action_stock_assign_voucher').sudo().with_context(picking_ids=self.ids).read()[0]
+        return wizard

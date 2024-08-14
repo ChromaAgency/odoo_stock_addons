@@ -35,6 +35,7 @@
         'security/stock_voucher_security.xml',
         'security/ir.model.access.csv',
         'wizards/stock_print_stock_voucher_views.xml',
+        'wizards/stock_assign_stock_voucher_views.xml',
         'views/stock_book_views.xml',
         'views/stock_picking_voucher_views.xml',
         'views/stock_picking_type_views.xml',
