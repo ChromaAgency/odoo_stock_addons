@@ -244,6 +244,5 @@ class StockPicking(models.Model):
                 rec.declared_value = declared_value
 
     def action_assign_multi_picking_voucher(self):
-        self.ensure_one()
         wizard = self.env.ref('stock_voucher.action_stock_assign_voucher').sudo().with_context(picking_ids=self.ids).read()[0]
         return wizard
