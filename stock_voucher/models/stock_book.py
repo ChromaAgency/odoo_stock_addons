@@ -12,6 +12,9 @@ class StockBook(models.Model):
     name = fields.Char(
         required=True,
     )
+    active = fields.Boolean(
+        default=True,
+    )
     sequence_id = fields.Many2one(
         'ir.sequence',
         'Stock Voucher Sequence',
