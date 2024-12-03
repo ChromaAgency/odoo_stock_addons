@@ -5,6 +5,7 @@
         <field name="model">stock.book</field>
         <field name="arch" type="xml">
             <tree>
+                <field name="active" invisible="1"/>
                 <field name="name"/>
                 <field name="sequence_id"/>
                 <field name="lines_per_voucher"/>
@@ -22,6 +23,7 @@
                 </header>
                 <sheet>
                     <group>
+                        <field name="active" invisible="1"/>
                         <field name="name"/>
                         <field name="sequence_id"/>
                         <field name="lines_per_voucher"/>
