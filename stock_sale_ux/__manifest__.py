@@ -1,7 +1,7 @@
 
 {
     'name': 'Stock Sale UX',
-    'version': "17.0.1.2.0",
+    'version': "18.0.1.2.0",
     'category': 'Warehouse Management',
     'sequence': 14,
     'summary': '',
