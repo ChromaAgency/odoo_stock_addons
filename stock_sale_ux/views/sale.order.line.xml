@@ -6,7 +6,7 @@
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="sale.view_order_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//tree//field[@name='price_unit']" position="before">
+            <xpath expr="//list//field[@name='price_unit']" position="before">
                 <field name="qty_available" />
                 <field name="virtual_available" />
             </xpath> 
