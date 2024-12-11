@@ -4,7 +4,7 @@
     <record id="l10n_ar_sale_stock_report_invoice_document" model="ir.ui.view">
         <!-- <field name="name">sale_stock.move.form.inherit</field>
         <field name="model">account.move</field> -->
-        <field name="inherit_id" ref="account.report_invoice_document"/>
+        <field name="inherit_id" ref="stock_account.stock_account_report_invoice_document"/>
         <field name="arch" type="xml">
             <table name="invoice_line_table" position="attributes">
                 <attribute name="class" add="w-100" separator=" "></attribute>
