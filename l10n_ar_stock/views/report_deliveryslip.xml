@@ -58,7 +58,7 @@
         <br/>
     </xpath>
 
-    <xpath expr="//t[@name='lot_serial']" position="after">
+    <xpath expr="//th[@name='lot_serial']" position="after">
         <t name="dispatch_number" t-if="has_serial_number">
             <th>
                 Numero de despacho
@@ -79,7 +79,7 @@
     <!-- remove default document title -->
     <h2 position="replace" />
 
-    <div class="row mt-4 mb-4" position="replace">
+    <div id="informations" position="replace">
         <div id="informations" class="row mt8 mb8">
             <div class="col-6">
                 <t t-set="partner" t-value="o.partner_id or (o.move_ids and o.move_ids[0].partner_id)" />
