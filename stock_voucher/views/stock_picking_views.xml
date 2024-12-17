@@ -17,6 +17,9 @@
         <field name="model">stock.picking</field>
         <field name="inherit_id" ref="stock.vpicktree"/>
         <field name="arch" type="xml">
+            <header>
+                <button name="action_assign_multi_picking_voucher" type="object" string="Asignar remitos" />
+            </header>
             <field name="name" position="after">
                 <field name="voucher_ids" widget="many2many_tags"/>
             </field>

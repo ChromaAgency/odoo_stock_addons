@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<odoo>
+    <record model="ir.ui.view" id="view_assign_stock_voucher_form">
+        <field name="name">assign_stock_picking.form</field>
+        <field name="model">stock.assign_stock_voucher</field>
+        <field name="arch" type="xml">
+            <form string="Print Stock Voucher">
+                <group>
+                    <field name="lines_per_voucher" invisible="1"/>
+                    <field name="book_id" required="1" />
+                </group>
+                <group >
+                    <field name="next_voucher_number"/>
+                </group>
+            <footer>
+                <button name="do_print_and_assign" type="object" class="oe_highlight" string="Imprimir y asignar" />
+                <button name="assign_numbers" type="object" string="Asignar numeros" />
+                <button string="Cerrar" special="cancel"/>
+            </footer>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_stock_assign_voucher">
+        <field name="name">Asignar remitos</field>
+        <field name="res_model">stock.assign_stock_voucher</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_assign_stock_voucher_form"/>
+        <field name="target">new</field>
+    </record>
+
+</odoo>
