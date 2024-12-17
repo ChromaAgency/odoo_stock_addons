@@ -2,6 +2,7 @@
 # For copyright and license notices, see __manifest__.py file in module root
 # directory
 ##############################################################################
+from ast import literal_eval
 from odoo import fields, models, api, _
 from odoo.exceptions import UserError
 
@@ -232,3 +233,10 @@ class StockPicking(models.Model):
                     rec.sale_id.date_order or fields.Date.today())
             else:
                 rec.declared_value = declared_value
+    
+    def action_assign_multi_picking_voucher(self):
+        wizard = self.env.ref('stock_voucher.action_stock_assign_voucher').sudo().read()[0]
+        cont = literal_eval(wizard['context']).copy()
+        cont['picking_ids'] = self.ids
+        wizard['context'] = cont
+        return wizard
