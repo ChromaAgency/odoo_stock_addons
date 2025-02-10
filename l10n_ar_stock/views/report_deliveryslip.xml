@@ -126,7 +126,7 @@
                 </t>
                 <br />
                 <strong>Facturas relacionadas: </strong>
-                <t t-out="', '.join(o.get_related_invoices())" />
+                <t t-out="', '.join(o.sudo().get_related_invoices())" />
 
                 <t t-if="o._fields.get('purchase_order_number') and o.purchase_order_number">
                     <br />
