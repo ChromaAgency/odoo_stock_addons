@@ -3,8 +3,8 @@ from odoo.tools import float_round
 import logging
 _logger = logging.getLogger(__name__)
 
-class ProductTemplate(models.Model):
-    _inherit = 'product.template'
+class ProductProduct(models.Model):
+    _inherit = 'product.product'
 
     stock_to_sale = fields.Float(string="Stock para ventas", compute="_compute_stock_to_sale", compute_sudo=False, digits='Product Unit of Measure')
 
@@ -15,3 +15,12 @@ class ProductTemplate(models.Model):
             rec.stock_to_sale = sum(stocks.filtered(lambda s: s.product_id.id == rec.id).mapped('available_quantity'))
 
 
+class ProductTemplate(models.Model):
+    _inherit = 'product.template'
+
+    stock_to_sale = fields.Float(string="Stock para ventas", compute="_compute_stock_to_sale", compute_sudo=False, digits='Product Unit of Measure')
+
+
+    def _compute_stock_to_sale(self):
+        for rec in self:
+            rec.stock_to_sale = sum(rec.product_variant_ids.mapped('stock_to_sale'))
