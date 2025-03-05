@@ -11,6 +11,10 @@ class ProductTemplate(models.Model):
 
     arba_code = fields.Char(
     )
+    needs_dispatch = fields.Boolean(
+        string='Needs Dispatch',
+        default=False,
+    )
 
     @api.constrains('arba_code')
     def check_arba_code(self):

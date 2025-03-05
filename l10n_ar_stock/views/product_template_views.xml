@@ -7,6 +7,7 @@
         <field name="inherit_id" ref="product.product_template_form_view"/>
         <field name="arch" type="xml">
             <field name="categ_id" position="after">
+                <field name="needs_dispatch"/>
                 <label for="arba_code" groups="l10n_ar_stock.arba_cot_enabled"/>
                 <div class="oe_inline" groups="l10n_ar_stock.arba_cot_enabled">
                     <field name="arba_code" class="oe_inline"/>
